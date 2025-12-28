@@ -18,11 +18,11 @@ import {
 } from "@mantine/core"
 import Link from "next/link"
 import { signIn } from "next-auth/react"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { notifications } from "@mantine/notifications"
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get("callbackUrl") || "/dashboard"
@@ -129,7 +129,7 @@ export default function LoginPage() {
                 color="payfit.6"
                 loading={loading}
                 style={{
-                  boxShadow: '0 4px 12px rgba(45, 106, 79, 0.2)'
+                  boxShadow: '0 10px 15px -3px rgba(139, 92, 246, 0.3), 0 4px 6px -2px rgba(139, 92, 246, 0.1)'
                 }}
               >
                 Se connecter
@@ -157,5 +157,13 @@ export default function LoginPage() {
         </Box>
       </Container>
     </Box>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <LoginContent />
+    </Suspense>
   )
 }

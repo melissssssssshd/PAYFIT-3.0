@@ -7,7 +7,10 @@ import "@mantine/core/styles.css"
 import "@mantine/dates/styles.css"
 import "@mantine/charts/styles.css"
 import "@mantine/notifications/styles.css"
+import { Inter } from "next/font/google"
 import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "PayFit - Logiciel de paie et RH en ligne",
@@ -43,7 +46,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript defaultColorScheme="light" />
       </head>
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`}>
         <MantineProvider>
           {children}
         </MantineProvider>

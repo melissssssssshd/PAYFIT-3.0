@@ -132,9 +132,9 @@ export default function AdminDashboard() {
         />
       </SimpleGrid>
 
-      <SimpleGrid cols={{ base: 1, lg: 2 }} spacing="lg">
+      <SimpleGrid cols={{ base: 1, lg: 2 }} spacing="md">
         {/* Revenue Chart */}
-        <Card shadow="sm" radius="md" padding="xl" withBorder>
+        <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
           <Group justify="space-between" mb="xl">
             <Box>
               <Text fw={700} size="lg">Croissance du CA (M€)</Text>
@@ -154,7 +154,7 @@ export default function AdminDashboard() {
         </Card>
 
         {/* System Health */}
-        <Card shadow="sm" radius="md" padding="xl" withBorder>
+        <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
           <Group justify="space-between" mb="xl">
             <Box>
               <Text fw={700} size="lg">Santé du Système</Text>
@@ -183,9 +183,9 @@ export default function AdminDashboard() {
         </Card>
       </SimpleGrid>
 
-      <SimpleGrid cols={{ base: 1, lg: 3 }} spacing="lg">
+      <SimpleGrid cols={{ base: 1, lg: 3 }} spacing="md">
         {/* Recent Activity */}
-        <Card shadow="sm" radius="md" padding="xl" withBorder style={{ gridColumn: 'span 2' }}>
+        <Card shadow="sm" radius="md" padding="lg" style={{ gridColumn: 'span 2', backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
           <Group justify="space-between" mb="xl">
             <Text fw={700} size="lg">Activité Système Récente</Text>
             <Button variant="subtle" color="payfit" size="xs">Tout voir</Button>
@@ -195,8 +195,7 @@ export default function AdminDashboard() {
               <Box
                 key={i}
                 p="md"
-                bg="gray.0"
-                style={{ borderRadius: 12, border: '1px solid var(--mantine-color-gray-1)' }}
+                style={{ borderRadius: 12, border: '1px solid rgba(255,255,255,0.4)', backgroundColor: 'rgba(255,255,255,0.3)' }}
               >
                 <Group justify="space-between" align="flex-start" wrap="nowrap">
                   <Group gap="md">
@@ -220,7 +219,7 @@ export default function AdminDashboard() {
 
         {/* Quick Stats Widget */}
         <Stack gap="lg">
-          <Card shadow="sm" radius="md" padding="lg" withBorder bg="payfit.0">
+          <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(237, 233, 254, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
             <Stack gap="md">
               <Group>
                 <ThemeIcon size="xl" radius="md" color="payfit" variant="filled">
@@ -239,7 +238,7 @@ export default function AdminDashboard() {
             </Stack>
           </Card>
 
-          <Card shadow="sm" radius="md" padding="lg" withBorder>
+          <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
             <Text fw={700} size="sm" mb="md">Nouveaux Inscrits</Text>
             <Group align="flex-end" gap="xs">
               <Text size={rem(32)} fw={800} style={{ lineHeight: 1 }}>+247</Text>
@@ -260,7 +259,7 @@ export default function AdminDashboard() {
             </Group>
           </Card>
 
-          <Card shadow="sm" radius="md" padding="lg" withBorder>
+          <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
             <Group gap="sm" mb="md">
               <IconChartBar size={18} color="var(--mantine-color-blue-6)" />
               <Text fw={700} size="sm">Utilisation Plateforme</Text>
@@ -279,7 +278,7 @@ export default function AdminDashboard() {
 
 function KPICard({ title, value, trend, trendType, icon: Icon, color }: any) {
   return (
-    <Card shadow="sm" radius="md" padding="lg" withBorder>
+    <Card shadow="sm" radius="md" padding="lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.4)' }}>
       <Group justify="space-between" mb="xs">
         <ThemeIcon color={color} variant="light" size="lg" radius="md">
           <Icon size={20} />

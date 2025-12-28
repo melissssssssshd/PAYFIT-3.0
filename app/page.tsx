@@ -33,7 +33,7 @@ import {
 
 export default function Home() {
   return (
-    <Box bg="white" style={{ minHeight: '100vh' }}>
+    <Box style={{ minHeight: '100vh', background: 'transparent' }}>
       {/* Top Banner */}
       <Box
         bg="payfit.6"
@@ -49,7 +49,7 @@ export default function Home() {
       </Box>
 
       {/* Header */}
-      <Box component="header" py="md" style={{ borderBottom: `1px solid var(--mantine-color-gray-2)`, backgroundColor: 'white', position: 'sticky', top: 0, zIndex: 100 }}>
+      <Box component="header" py="md" style={{ borderBottom: `1px solid rgba(255,255,255,0.3)`, backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 100 }}>
         <Container size="lg">
           <Group justify="space-between">
             <Group gap="sm">
@@ -81,7 +81,7 @@ export default function Home() {
       </Box>
 
       {/* Hero Section */}
-      <Box component="section" py={80} bg="gray.0">
+      <Box component="section" py={80}>
         <Container size="lg">
           <SimpleGrid cols={{ base: 1, md: 2 }} spacing={50}>
             <Stack gap="xl">
@@ -276,7 +276,7 @@ export default function Home() {
       </Box>
 
       {/* Features Grid */}
-      <Box py={100} bg="gray.0">
+      <Box py={100}>
         <Container size="lg">
           <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="xl">
             <FeatureCard
@@ -323,7 +323,7 @@ export default function Home() {
       </Box>
 
       {/* FAQ */}
-      <Box py={100} bg="gray.0" id="faq">
+      <Box py={100} id="faq">
         <Container size="sm">
           <Title order={2} ta="center" mb={60}>Questions fréquentes</Title>
           <Accordion variant="separated" radius="md">
@@ -384,7 +384,7 @@ export default function Home() {
       </Box>
 
       {/* Footer */}
-      <Box component="footer" py={60} style={{ borderTop: `1px solid var(--mantine-color-gray-2)` }} bg="gray.0">
+      <Box component="footer" py={60} style={{ borderTop: `1px solid rgba(255,255,255,0.3)` }}>
         <Container size="lg">
           <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing={50}>
             <Stack gap="md">

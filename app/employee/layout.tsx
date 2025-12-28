@@ -12,6 +12,7 @@ export default function EmployeeLayout({ children }: { children: ReactNode }) {
 
   return (
     <AppShell
+      className="employee-shell"
       header={{ height: 60 }}
       navbar={{
         width: 256,

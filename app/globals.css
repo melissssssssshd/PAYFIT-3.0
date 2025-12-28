@@ -2,41 +2,26 @@
 @import "tw-animate-css";
 
 :root {
-  /* PayFit Green palette from the provided color swatch */
-  --background: #fdfdfd;
-  --foreground: #051f20;
-  --card: #ffffff;
-  --card-foreground: #163832;
-  --popover: #ffffff;
-  --popover-foreground: #163832;
-  --primary: #235347;
+  /* Luxury Clean White & Subtle Purple Palette */
+  --background: #ffffff;
+  --foreground: #334155; /* Slate 700 - Sharp text */
+  --card: rgba(255, 255, 255, 0.85); /* High Opacity clean glass */
+  --card-foreground: #334155;
+  --primary: #c084fc; /* Purple 500 - Mature Light Purple Accent */
   --primary-foreground: #ffffff;
-  --secondary: #daf1de;
-  --secondary-foreground: #0b2b26;
-  --muted: #f1f3f5;
-  --muted-foreground: #8eb69b;
-  --accent: #8eb69b;
-  --accent-foreground: #ffffff;
-  --destructive: #fa5252;
-  --destructive-foreground: #ffffff;
-  --border: #e9ecef;
-  --input: #e9ecef;
-  --ring: #235347;
-  --chart-1: #235347;
-  --chart-2: #8eb69b;
-  --chart-3: #4a9069;
-  --chart-4: #daf1de;
-  --chart-5: #0b2b26;
-  --radius: 12px;
+  --secondary: #f8fafc; /* Slate 50 */
+  --secondary-foreground: #475569;
+  --muted: #f1f5f9;
+  --accent: #f3e8ff; /* Purple 100 - Very subtle */
+  --border: rgba(226, 232, 240, 0.8);
+  --radius: 30px; /* Kept the round look */
 
-  --sidebar: #ffffff;
-  --sidebar-foreground: #163832;
-  --sidebar-primary: #235347;
+  /* Sidebar */
+  --sidebar: rgba(255, 255, 255, 0.85);
+  --sidebar-foreground: #475569;
+  --sidebar-primary: #a855f7; /* Purple 500 */
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #daf1de;
-  --sidebar-accent-foreground: #0b2b26;
-  --sidebar-border: #e9ecef;
-  --sidebar-ring: #235347;
+  --sidebar-border: rgba(226, 232, 240, 0.8);
 }
 
 @theme inline {
@@ -69,7 +54,7 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-xl: 30px; /* Mantine XL override */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -86,7 +71,61 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    @apply text-foreground antialiased;
+    zoom: 0.85; /* De-zoom maintained */
+    /* Clean Luxury White Background with Subtle Purple Whisper */
+    background-color: #fcfcfc;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(243, 232, 255, 0.4) 0px, transparent 40%),  /* Top Left Whisper */
+        radial-gradient(at 100% 100%, rgba(243, 232, 255, 0.4) 0px, transparent 40%); /* Bottom Right Whisper */
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  /* "Crystal Clean" Component Styling */
+  .mantine-Paper-root, 
+  .mantine-Card-root, 
+  [data-slot="sidebar"] {
+    /* Solid, clean white glass */
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    
+    /* Crisp Silver Border */
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    
+    /* Elegant Clean Shadow (No Glow) */
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.03) !important;
+        
+    border-radius: 30px !important;
+  }
+
+  /* Aggressive Transparency for Layout Containers */
+  .mantine-AppShell-root,
+  .mantine-AppShell-navbar,
+  .mantine-AppShell-header {
+      background-color: transparent !important;
+      border: none !important; /* Remove harsh layout borders */
+  }
+
+  .employee-shell .mantine-AppShell-main {
+      background-color: transparent !important;
+      border: none !important;
+      padding-left: calc(var(--app-shell-navbar-width, 0px) + 32px) !important; /* Spacing from sidebar maintained */
+      padding-top: calc(var(--app-shell-header-height, 0px) + 24px) !important;
+  }
+  
+  /* Sidebar Specific */
+  nav.mantine-AppShell-navbar {
+      background: rgba(255, 255, 255, 0.9) !important; /* More solid sidebar */
+      margin: 16px;
+      height: calc(100vh - 32px) !important;
+      border-radius: 30px !important;
+      border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  }
+
+  /* Ensure content backgrounds don't override glass */
+  .bg-white, .mantine-bg-white {
+      background-color: rgba(255, 255, 255, 0.6) !important;
   }
 }

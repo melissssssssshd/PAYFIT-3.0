@@ -30,6 +30,7 @@ import {
   IconUserCheck,
   IconPlus,
 } from "@tabler/icons-react"
+import { formatDate } from "@/lib/utils"
 
 type Event = {
   id: string
@@ -260,7 +261,7 @@ export default function EmployeeCalendrierPage() {
                     </ThemeIcon>
                     <div style={{ flex: 1 }}>
                       <Text size="sm" fw={700} lineClamp={1}>{event.title}</Text>
-                      <Text size="xs" c="dimmed">{event.time} • {event.date.toLocaleDateString()}</Text>
+                      <Text size="xs" c="dimmed">{event.time} • {formatDate(event.date)}</Text>
                     </div>
                   </Group>
                 );

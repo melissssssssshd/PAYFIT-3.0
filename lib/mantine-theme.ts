@@ -1,23 +1,23 @@
 import { createTheme, type MantineColorsTuple, rem } from "@mantine/core"
 
-// Custom Green palette from the provided color image
-const payfitGreen: MantineColorsTuple = [
-  "#DAF1DE", // 0: Lightest
-  "#C2E7C9", // 1
-  "#A8DDB4", // 2
-  "#8EB69B", // 3: Medium Light (from image)
-  "#6CA382", // 4
-  "#4A9069", // 5
-  "#235347", // 6: Primary Brand (from image)
-  "#163832", // 7: Dark (from image)
-  "#0B2B26", // 8: Darker (from image)
-  "#051F20", // 9: Darkest (from image)
+// Custom Ethereal Glass palette
+const payfitViolet: MantineColorsTuple = [
+  "#fdfcff", // 0
+  "#f5f3ff", // 1
+  "#ede9fe", // 2
+  "#e9d5ff", // 3
+  "#ddd6fe", // 4
+  "#c4b5fd", // 5: Primary Brand (Ethereal)
+  "#a78bfa", // 6
+  "#8b5cf6", // 7
+  "#7c3aed", // 8
+  "#6d28d9", // 9
 ]
 
 export const theme = createTheme({
   primaryColor: "payfit",
   colors: {
-    payfit: payfitGreen,
+    payfit: payfitViolet,
   },
   defaultRadius: "md",
   cursorType: "pointer",
@@ -116,8 +116,8 @@ export const theme = createTheme({
   shadows: {
     xs: "0 1px 2px rgba(0, 0, 0, 0.05)",
     sm: "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)",
-    md: "0 4px 12px rgba(5, 31, 32, 0.08)",
-    lg: "0 10px 25px rgba(5, 31, 32, 0.12)",
-    xl: "0 20px 48px rgba(5, 31, 32, 0.16)",
+    md: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(139, 92, 246, 0.05)",
+    lg: "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(139, 92, 246, 0.05)",
+    xl: "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(139, 92, 246, 0.05)",
   },
 })

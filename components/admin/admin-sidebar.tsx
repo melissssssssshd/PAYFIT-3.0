@@ -138,7 +138,7 @@ export function AdminSidebar() {
 
   return (
     <ScrollArea h="100%">
-      <Box p="md">
+      <Box p="md" style={{ backgroundColor: 'transparent' }}>
         {menuItems.map((item) => (
           <Box key={item.title} mb="xs">
             {item.children ? (

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import {
     Title,
@@ -21,12 +21,14 @@ import { notifications } from "@mantine/notifications"
 import { IconCheck, IconBuilding, IconUsers, IconKey } from "@tabler/icons-react"
 import { useRouter } from "next/navigation"
 
+
+
 const WILAYAS = [
     "Alger", "Oran", "Constantine", "Blida", "Annaba", "Sétif", "Batna", "Tlemcen",
     "Béjaïa", "Biskra", "Tizi Ouzou", "Mostaganem", "Sidi Bel Abbès", "Skikda"
 ]
 
-export default function OnboardingPage() {
+function OnboardingContent() {
     const searchParams = useSearchParams()
     const router = useRouter()
     const leadId = searchParams.get("leadId")
@@ -58,7 +60,7 @@ export default function OnboardingPage() {
             }
             if (active === 2) {
                 return {
-                    adminEmail: !/^\\S+@\\S+$/.test(values.adminEmail) ? "Email invalide" : null,
+                    adminEmail: !/^\S+@\S+$/.test(values.adminEmail) ? "Email invalide" : null,
                     adminPassword: values.adminPassword.length < 8 ? "Minimum 8 caractères" : null,
                 }
             }
@@ -248,5 +250,13 @@ export default function OnboardingPage() {
                 </Group>
             </Card>
         </Stack>
+    )
+}
+
+export default function OnboardingPage() {
+    return (
+        <Suspense fallback={<div>Chargement...</div>}>
+            <OnboardingContent />
+        </Suspense>
     )
 }
